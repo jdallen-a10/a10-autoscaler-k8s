@@ -1,0 +1,29 @@
+debug: 5
+# check_interval is in seconds. How often do you want the program to try
+# and make adjustments to the number of running Pods?
+check_interval: 10
+cmd_timeout: 30
+cluster:
+  ip: 10.1.1.220
+  # K8s API Server Port
+  port: 8443
+  # K8s Auth Token
+  auth_token: Z1pWZHdZcmk5bSt1UXJlbjR2a3plalI0d1VyVURSK2dYbzlNQzFkL2RkWT0K
+  # The deployment to scale
+  deployment: "webserver"
+  namespace: "cyan"
+  min_pods: 3
+  max_pods: 10
+thunder:
+  # Thunder MGMT IP & Port
+  ip: 10.1.1.33
+  port: 443
+  # This is the K8s Secret where Username/Password to access the Thunder
+  # node are stored.
+  secret: thunder-access-creds
+  secret_namespace: default
+  slb: ws-vip
+  # This is port '+' protocol. This is the format that aXAPI is looking for.
+  slb_port: "80+http"
+  # rate is in Kbps
+  rate: 20
