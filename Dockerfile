@@ -17,7 +17,7 @@ ADD ./a10-golang-axapi /app/a10-golang-axapi
 ADD ./k8s-go /app/k8s-go
 ADD go.* /app
 ADD main.go /app
-ADD ./tmp-config.yaml /app/config.yaml
+ADD ./config.yaml /app/config.yaml
 ADD Dockerfile /app
 
 WORKDIR /app
